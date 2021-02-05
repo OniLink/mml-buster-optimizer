@@ -1,0 +1,16 @@
+The Buster Optimizer is a command line tool to find the optimal Mega Man Legends
+Buster Gun setup given your available parts and the stats you wish to prioritize.
+
+To compile, simply run 'cargo build --release' assuming you have cargo installed.
+Copy 'BusterParts.csv' to the directory with the executable, then modify it to
+mark which parts you have available. Adding '//' or '#' to the start of a line
+tells the program to ignore that line.
+
+By default, all buster parts for Mega Man Legends 1 are available and all buster
+parts for Mega Man Legends 2 are deactivated.
+
+When running the program, pass in the name of the file with all the buster
+parts, as well as parameters to tell the program how to prioritize the buster
+stats, which game you are playing, and whether or not you have the adapter plug.
+All options to control the program are specified by running it with the '-h' or
+'--help' command.

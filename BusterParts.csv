@@ -1,0 +1,66 @@
+// Mega Man Legends 1
+Power Raiser,1,0,0,0
+Power Raiser alpha,2,0,0,0
+Power Raiser Omega,3,0,0,0
+Laser,4,0,0,0
+Power Stream,7,0,0,0
+Turbo Charger,0,1,0,0
+Turbo Charger alpha,0,2,0,0
+Turbo Charge Omega,0,3,0,0
+Turbo Battery,0,4,0,0
+Auto Battery,0,7,0,0
+Range Booster,0,0,1,0
+Range Booster alpha,0,0,2,0
+Range Booster Omega,0,0,3,0
+Sniper Range,0,0,4,0
+Rapid Fire,0,0,0,1
+Rapid Striker,0,0,0,2
+Blast Unit,1,2,0,0
+Blaster Unit Omega,2,3,0,0
+Blaster Unit R,2,2,0,2
+Power Blaster L,2,0,1,0
+Power Blaster R,2,0,0,1
+Buster Unit,1,0,2,0
+Buster Unit Omega,3,0,3,0
+Machine Gun,0,3,0,1
+Gatling Gun,1,4,1,0
+Sniper Unit,0,1,2,0
+Sniper Unit Omega,0,2,3,0
+Sniper Scope,1,0,5,0
+Triple Access,0,1,1,1
+Omni-Unit,1,1,1,1
+Omni-Unit Omega,2,2,2,1
+Buster Max,7,7,7,4
+
+// Mega Man Legends 2
+#Power Raiser,2,0,0,0
+#Power Raiser alpha,4,0,0,0
+#Power Raiser Omega,7,0,0,0
+#Turbo Charger,0,2,0,0
+#Turbo Charger alpha,0,4,0,0
+#Turbo Charger Omega,0,7,0,0
+#Range Booster,0,0,2,0
+#Range Booster alpha,0,0,4,0
+#Range Booster Omega,0,0,7,0
+#Rapid Fire,0,0,0,2
+#Rapid Fire alpha,0,0,0,4
+#Rapid Fire Omega,0,0,0,7
+#Blaster Unit,1,2,0,0
+#Buster Unit,1,0,2,0
+#Power Blaster,2,0,0,1
+#Sniper Unit,0,1,2,0
+#Autofire Unit,0,2,0,1
+#Blaster Unit Omega,2,3,0,0
+#Buster Unit Omega,2,0,3,0
+#Power Blaster Omega,3,0,0,2
+#Sniper Unit Omega,0,2,3,0
+#Autofire Unit Omega,0,3,0,2
+#Upgrade Pack,1,1,1,0
+#Booster Pack,1,1,0,1
+#Energizer Pack,0,1,1,1
+#Upgrade Pack Omega,1,3,3,0
+#Booster Pack Omega,3,3,0,1
+#Energizer Pack Omega,0,3,1,3
+#Accessory Pack,1,1,1,1
+#Accessory Pack alpha,2,2,2,1
+#Accessory Pack Omega,7,7,7,7
