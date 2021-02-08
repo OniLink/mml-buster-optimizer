@@ -1,9 +1,77 @@
-use std::vec::Vec;
+//use std::vec::Vec;
 use crate::buster::BusterLayout;
+use crate::buster::BusterPart;
 use crate::config::Config;
 
 
 pub fn simulate( config: &Config ) -> BusterLayout {
+    simulate_new( &config )
+}
+
+
+pub fn simulate_new( config: &Config ) -> BusterLayout {
+    // Find how many parts we can have
+    let part_count = match config.adapter_plug {
+        false => 2,
+        true => 3
+    };
+
+    // Find the best layout
+    let mut best_layout = BusterLayout::empty();
+    let mut best_score = 0;
+
+    for i in 1..=part_count {
+        let layout = find_best_layout( config, &config.buster_parts, i );
+        let score = layout.score( config );
+
+        if score > best_score {
+            best_layout = layout;
+            best_score = score;
+        }
+    }
+
+    best_layout
+}
+
+
+fn find_best_layout( config: &Config, part_list: &[ BusterPart ], part_count: usize ) -> BusterLayout {
+    let mut best_layout = BusterLayout::empty();
+    let mut best_score = 0;
+
+    let base_layout = BusterLayout::empty();
+
+    generate_layouts( config, base_layout, part_list, part_count, &mut best_score, &mut best_layout );
+
+    best_layout
+}
+
+
+fn generate_layouts( config: &Config, current_layout: BusterLayout, part_list: &[ BusterPart ],
+                     part_count: usize, best_score: &mut i32, best_layout: &mut BusterLayout ) {
+    // If we're out of part slots, we can immediately test what we have and quit
+    if part_count == 0 {
+        let score = current_layout.score( config );
+
+        if score > *best_score {
+            *best_score = score;
+            *best_layout = current_layout;
+        }
+    }
+
+    // Consider every available part
+    else {
+        for i in 0..part_list.len() {
+            // Try including it
+            let part = part_list[ i ].clone();
+            let mut included_layout = current_layout.clone();
+            included_layout.buster_parts.push( part );
+            generate_layouts( config, included_layout, &part_list[ i+1.. ], part_count-1, best_score, best_layout );
+        }
+    }
+}
+
+/*
+pub fn simulate_old( config: &Config ) -> BusterLayout {
     let part_count = match config.adapter_plug {
         false => 2,
         true => 3
@@ -67,6 +135,9 @@ pub fn simulate( config: &Config ) -> BusterLayout {
     let mut col = available_parts;
     let mut row = part_count;
 
+    let best_score = BusterLayout::score_stats_tup( config, table[ col ][ row ] );
+    println!( "Best score found = {}", best_score );
+
     // Work towards the top left
     while col > 0 && row > 0 {
         // Move up the table as far as we can
@@ -89,3 +160,4 @@ pub fn simulate( config: &Config ) -> BusterLayout {
 
     layout
 }
+*/

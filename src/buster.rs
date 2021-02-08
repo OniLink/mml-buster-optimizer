@@ -13,6 +13,7 @@ pub struct BusterPart {
 }
 
 
+#[derive(Clone)]
 pub struct BusterLayout {
     pub buster_parts: Vec< BusterPart >  // The buster parts being used
 }
@@ -62,12 +63,12 @@ impl BusterLayout {
         score
     }
 
-
+/*
     pub fn score_stats_tup( config: &Config, stats: ( u8, u8, u8, u8 ) ) -> i32 {
         let ( attack, energy, range, rapid ) = stats;
         BusterLayout::score_stats( config, attack, energy, range, rapid )
     }
-
+*/
 
     pub fn stats( &self, config: &Config ) -> ( u8, u8, u8, u8 ) {
         // Tally the stats
